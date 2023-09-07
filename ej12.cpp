@@ -1,0 +1,1 @@
+/*12. Hacer una estructura llamada estudiante, en la cual se tendrán los siguientes Campos: Nombre, edad, promedio, pedir datos al usuario para 3 becados, comprobar cuál de los 3 tiene el mejor promedio y luego imprimir datos del becado. Use strcasecmp para comparar las cadenas y determinar si sus nombres son iguales. Ej.: Marco Sosa y Marco Perez.*/

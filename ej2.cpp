@@ -1,0 +1,3 @@
+/*2. Pevaco. Escribe un programa que pida tres cadenas al usuario, y muestre el resultado de concatenar las dos primeras letras de las cadenas introducidas, pero además que nos indique si las dos primeras cadenas son iguales.
+Ejemplo: el usuario introduce como cadenas perro, vaca y cocodrilo. El programa mostrará por pantalla: “El resultado de concatenar las dos primeras letras de las cadenas es: “pevaco”. La primera cadena, perro, no es igual a la segunda cadena, vaca.” Use strcat
+Si el usuario introdujera perro, perro, mulo, el programa debería mostrar: “El resultado de concatenar las dos primeras letras de las cadenas es pepemu. La primera cadena, perro, es igual a la segunda cadena, perro.”*/

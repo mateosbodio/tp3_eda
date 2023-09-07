@@ -1,0 +1,1 @@
+/*10. Hacer un programa en C++ para A) Registrar los datos de tres libros como: título, autor, año y color del libro. El color se deberá hacer mediante una enumeración y sólo habrá rojo, verde y azul. B) Mostrar 3 Libros según sea su color.*/
