@@ -1,54 +1,75 @@
 /*10. Hacer un programa en C++ para A) Registrar los datos de tres libros como: t√≠tulo, autor, a√±o y color del libro. El color se deber√° hacer mediante una enumeraci√≥n y s√≥lo habr√° rojo, verde y azul. B) Mostrar 3 Libros seg√∫n sea su color.*/
-#include <iostream>
-#include <string>
-using namespace std;
-enum Color {
-  rojo,
-  verde,
-  azul
+#include <stdio.h>
+#include <stdlib.h>
+// DefiniciÛn de la enumeraciÛn para los colores
+enum colores {
+  ROJO,
+  VERDE,
+  AZUL
 };
-struct Libro {
-  string titulo;
-  string autor;
+// Estructura para almacenar los datos de un libro
+struct libro {
+  char titulo[50];
+  char autor[50];
   int anio;
-  Color color;
+  enum colores color;
 };
+// FunciÛn para registrar los datos de un libro
+void registrarLibro(struct libro *libro) {
+  printf("TÌtulo: ");
+  scanf("%s", libro->titulo);
+  printf("Autor: ");
+  scanf("%s", libro->autor);
+  printf("AÒo: ");
+  scanf("%d", &libro->anio);
+  printf("Color: ");
+  scanf("%d", &libro->color);
+}
+// FunciÛn para mostrar los datos de un libro
+void mostrarLibro(struct libro libro) {
+  printf("TÌtulo: %s\n", libro.titulo);
+  printf("Autor: %s\n", libro.autor);
+  printf("AÒo: %d\n", libro.anio);
+  switch (libro.color) {
+    case ROJO:
+      printf("Color: Rojo\n");
+      break;
+    case VERDE:
+      printf("Color: Verde\n");
+      break;
+    case AZUL:
+      printf("Color: Azul\n");
+      break;
+  }
+}
+// FunciÛn principal
 int main() {
-  Libro libros[3];
-  for (int i = 0; i < 3; i++) {
-    cout << "Ingrese el tÌtulo del libro " << i + 1 << ": ";
-    cin >> libros[i].titulo;
-    cout << "Ingrese el autor del libro " << i + 1 << ": ";
-    cin >> libros[i].autor;
-    cout << "Ingrese el aÒo de publicaciÛn del libro " << i + 1 << ": ";
-    cin >> libros[i].anio;
-    cout << "Ingrese el color del libro " << i + 1 << " (rojo, verde o azul): ";
-    string color;
-    cin >> color;
-    if (color == "rojo") {
-      libros[i].color = rojo;
-    } else if (color == "verde") {
-      libros[i].color = verde;
-    } else if (color == "azul") {
-      libros[i].color = azul;
-    } else {
-      cout << "Color no v·lido. Ingrese rojo, verde o azul." << endl;
-      i--;
+  // DeclaraciÛn de las variables
+  struct libro libros[3];
+  int i;
+  // Registro de los datos de los libros
+  for (i = 0; i < 3; i++) {
+    registrarLibro(&libros[i]);
+  }
+  // Mostrar los datos de los libros seg˙n su color
+  printf("Libros rojos:\n");
+  for (i = 0; i < 3; i++) {
+    if (libros[i].color == ROJO) {
+      mostrarLibro(libros[i]);
     }
   }
-  cout << endl << "Libros rojos:" << endl;
-  for (int i = 0; i < 3; i++) {
-    if (libros[i].color == rojo) {
-      cout << libros[i].titulo << " de " << libros[i].autor << " (" << libros[i].anio << ")" << endl;
+  printf("Libros verdes:\n");
+  for (i = 0; i < 3; i++) {
+    if (libros[i].color == VERDE) {
+      mostrarLibro(libros[i]);
+    } 
+  }
+  printf("Libros azules:\n");
+  for (i = 0; i < 3; i++) {
+    if (libros[i].color == AZUL) {
+      mostrarLibro(libros[i]);
     }
   }
-  cout << endl << "Libros verdes:" << endl;
-  for (int i = 0; i < 3; i++) {
-    if (libros[i].color == verde) {
-      cout << libros[i].titulo << " de " << libros[i].autor << " (" << libros[i].anio << ")" << endl;
-    }
-  }
-  cout << endl << "Libros azules:" << endl;
-  for (int i = 0; i < 3;
-
+  return 0;
+}
 
